@@ -24,6 +24,15 @@ The menu also includes **Restart Zotero**. This add-on needs no companion plugin
 
 The overlay targets Zotero's internal interface selectors and can need adjustment after a Zotero update. Current testing targets macOS. The predecessor build received startup checks on Zotero 10.0.6; a complete appearance and profile-restoration review has not been repeated for this standalone packaging change. There is no separate behavioral test suite; the repository's test script checks JavaScript syntax.
 
+## Other plugins
+
+These plugins install independently. No suite is required.
+
+- [Praetor for Zotero](https://github.com/kvarnelis/zotero-praetor) — Chat with Codex or Claude Code about Zotero items, search indexed text, and review proposed library changes.
+- [NotebookLM Pane for Zotero](https://github.com/kvarnelis/zotero-notebooklm-pane) — Keep Google NotebookLM in the item pane and prepare local PDFs for its upload dialog.
+- [Page View for Zotero](https://github.com/kvarnelis/zotero-page-view) — Add single-page reading, two-page spreads, page fitting, and focus controls to the PDF reader.
+- [Compact Pane for Zotero](https://github.com/kvarnelis/zotero-compact-pane) — Show compact metadata fields and copy attachment paths from the item menu.
+
 ## Build and check
 
 Building requires a Unix shell, `zip`, and Python 3. Syntax checks and any included unit tests require Node.js. End users installing an XPI do not need these developer tools.
