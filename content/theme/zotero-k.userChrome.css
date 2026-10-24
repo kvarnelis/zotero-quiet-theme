@@ -1,0 +1,847 @@
+/*
+ * Zotero-K userChrome theme for Zotero 9.0.4.
+ * Direction: Max Bill / Ulm School, compact, muted, legible.
+ */
+
+@-moz-document url-prefix("chrome://zotero/content/") {
+	:root {
+		--zk-paper: #fbfbfa;
+		--zk-surface: #ffffff;
+		--zk-sidepane: #f2f2f1;
+		--zk-toolbar: #f7f7f6;
+		--zk-toolbar-strong: #eeeeec;
+		--zk-rule: #d8d9d7;
+		--zk-rule-soft: #e7e8e5;
+		--zk-ink: #202426;
+		--zk-ink-muted: #676f73;
+		--zk-ink-soft: #8d9498;
+		--zk-selection: #565753;
+		--zk-selection-soft: #deded9;
+		--zk-selection-softer: #eeeeeb;
+		--zk-selection-border: #bdbdb7;
+		--zk-focus: #4d4e4a;
+		--zk-warning: #9b6a19;
+
+		--accent-blue: var(--zk-selection) !important;
+		--accent-blue10: rgba(70, 71, 68, 0.12) !important;
+		--accent-blue30: rgba(70, 71, 68, 0.28) !important;
+		--accent-blue50: rgba(70, 71, 68, 0.45) !important;
+		--fill-primary: rgba(18, 22, 24, 0.92) !important;
+		--fill-secondary: rgba(18, 22, 24, 0.58) !important;
+		--fill-tertiary: rgba(18, 22, 24, 0.34) !important;
+		--fill-quarternary: rgba(18, 22, 24, 0.15) !important;
+		--fill-quinary: rgba(18, 22, 24, 0.07) !important;
+		--color-accent: var(--zk-selection) !important;
+		--color-accent-text: #ffffff !important;
+		--color-background: var(--zk-paper) !important;
+		--color-button: var(--zk-surface) !important;
+		--color-control: var(--zk-surface) !important;
+		--color-border: rgba(20, 24, 26, 0.16) !important;
+		--color-border50: rgba(20, 24, 26, 0.08) !important;
+		--color-panedivider: var(--zk-rule) !important;
+		--color-sidepane: var(--zk-sidepane) !important;
+		--color-tabbar: var(--zk-toolbar) !important;
+		--color-toolbar: var(--zk-toolbar) !important;
+		--color-stripe: rgba(30, 34, 36, 0.025) !important;
+		--material-background: var(--zk-paper) !important;
+		--material-button: var(--zk-surface) !important;
+		--material-control: var(--zk-surface) !important;
+		--material-sidepane: var(--zk-sidepane) !important;
+		--material-tabbar: var(--zk-toolbar) !important;
+		--material-toolbar: var(--zk-toolbar) !important;
+		--material-stripe: #f6f6f4 !important;
+		--material-panedivider: 1px solid var(--zk-rule) !important;
+
+		font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif !important;
+		color: var(--zk-ink) !important;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		:root {
+			--zk-paper: #202120;
+			--zk-surface: #272928;
+			--zk-sidepane: #252725;
+			--zk-toolbar: #242624;
+			--zk-toolbar-strong: #303330;
+			--zk-rule: #3b3f3c;
+			--zk-rule-soft: #333633;
+			--zk-ink: #e8e8e4;
+			--zk-ink-muted: #b5bab6;
+			--zk-ink-soft: #8f9691;
+			--zk-selection: #6d6e69;
+			--zk-selection-soft: #3a3b38;
+			--zk-selection-softer: #30312f;
+			--zk-selection-border: #565752;
+			--zk-focus: #cacac2;
+		}
+	}
+
+	#main-window,
+	#browser,
+	#appcontent,
+	#zotero-pane-stack,
+	#tabs-deck,
+	#zotero-pane {
+		background: var(--zk-paper) !important;
+		color: var(--zk-ink) !important;
+	}
+
+	/* Menu bar and tab strip */
+	#titlebar,
+	#toolbar-menubar,
+	#zotero-title-bar {
+		background: var(--zk-toolbar) !important;
+		color: var(--zk-ink) !important;
+		border-bottom: 1px solid var(--zk-rule-soft) !important;
+	}
+
+	#toolbar-menubar {
+		min-height: 0 !important;
+		height: 0 !important;
+		max-height: 0 !important;
+		padding: 0 !important;
+		overflow: hidden !important;
+		border: 0 !important;
+	}
+
+	#main-menubar > menu {
+		min-height: 20px !important;
+		padding: 0 7px !important;
+		margin: 0 !important;
+		color: var(--zk-ink) !important;
+		font-size: 11px !important;
+		font-weight: 600 !important;
+	}
+
+	#main-menubar > menu[_moz-menuactive="true"] {
+		background: var(--zk-toolbar-strong) !important;
+		color: var(--zk-ink) !important;
+	}
+
+	#tab-bar-container,
+	.tab-bar-inner-container,
+	.tabs-wrapper,
+	.tabs {
+		background: transparent !important;
+	}
+
+	.tab-bar-inner-container .tab {
+		padding: 0 8px !important;
+		border: 0 !important;
+		border-inline-end: 1px solid var(--zk-rule-soft) !important;
+		border-radius: 0 !important;
+		background: transparent !important;
+		color: var(--zk-ink-soft) !important;
+		font-size: 11px !important;
+		font-weight: 500 !important;
+		opacity: 0.88 !important;
+	}
+
+	.tab-bar-inner-container .tab:hover {
+		background: var(--zk-selection-softer) !important;
+		color: var(--zk-ink) !important;
+		opacity: 1 !important;
+	}
+
+	.tab-bar-inner-container .tab.selected {
+		background: var(--zk-surface) !important;
+		color: var(--zk-ink) !important;
+		box-shadow: inset 0 -2px 0 var(--zk-selection) !important;
+		opacity: 1 !important;
+	}
+
+	.tab-name {
+		font-size: 11px !important;
+		font-weight: 500 !important;
+	}
+
+	.tab-bar-inner-container .tab .tab-icon,
+	.tabs-wrapper .tab .tab-icon,
+	.tabs .tab .tab-icon {
+		display: none !important;
+		width: 0 !important;
+		min-width: 0 !important;
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+
+	.tab-close {
+		opacity: 0 !important;
+		transition: opacity 90ms linear !important;
+	}
+
+	.tab:hover .tab-close,
+	.tab.selected .tab-close {
+		opacity: 0.58 !important;
+	}
+
+	#zotero-tabs-toolbar {
+		padding-inline: 3px !important;
+	}
+
+	/* Primary layout */
+	#zotero-trees {
+		background: var(--zk-paper) !important;
+	}
+
+	#zotero-collections-pane,
+	#zotero-collections-tree-container,
+	#zotero-tag-selector-container {
+		background: var(--zk-sidepane) !important;
+		color: var(--zk-ink) !important;
+	}
+
+	#zotero-items-pane-container,
+	#zotero-items-pane,
+	#zotero-item-pane {
+		background: var(--zk-paper) !important;
+		color: var(--zk-ink) !important;
+	}
+
+	splitter,
+	#zotero-collections-splitter,
+	#zotero-items-splitter,
+	#zotero-tags-splitter,
+	#zotero-context-splitter {
+		min-width: 1px !important;
+		width: 1px !important;
+		background: var(--zk-rule) !important;
+		border: 0 !important;
+	}
+
+	splitter grippy {
+		opacity: 0 !important;
+	}
+
+	/* Toolbars, buttons, and search */
+	.zotero-toolbar,
+	toolbar.toolbar-primary,
+	#zotero-toolbar-collection-tree,
+	#zotero-toolbar-item-tree {
+		min-height: 34px !important;
+		padding: 4px 7px !important;
+		background: var(--zk-toolbar) !important;
+		border: 0 !important;
+		border-bottom: 1px solid var(--zk-rule-soft) !important;
+		box-shadow: none !important;
+	}
+
+	#zotero-collections-toolbar,
+	#zotero-items-toolbar {
+		min-height: 25px !important;
+	}
+
+	toolbarbutton.zotero-tb-button,
+	.zotero-tb-button,
+	toolbarbutton {
+		min-width: 22px !important;
+		min-height: 22px !important;
+		max-height: 24px !important;
+		margin: 0 1px !important;
+		padding: 2px 4px !important;
+		border: 1px solid transparent !important;
+		border-radius: 3px !important;
+		background: transparent !important;
+		box-shadow: none !important;
+		color: var(--zk-ink-muted) !important;
+		fill: var(--zk-ink-muted) !important;
+	}
+
+	#zotero-items-toolbar toolbarbutton .toolbarbutton-text {
+		display: none !important;
+	}
+
+	toolbarbutton.zotero-tb-button:hover,
+	.zotero-tb-button:hover,
+	toolbarbutton:hover {
+		background: var(--zk-selection-softer) !important;
+		border-color: var(--zk-rule-soft) !important;
+		color: var(--zk-ink) !important;
+		fill: var(--zk-ink) !important;
+	}
+
+	toolbarbutton.zotero-tb-button[open="true"],
+	.zotero-tb-button[open="true"],
+	toolbarbutton:active {
+		background: var(--zk-selection-soft) !important;
+		border-color: var(--zk-selection-border) !important;
+		color: var(--zk-ink) !important;
+		fill: var(--zk-ink) !important;
+	}
+
+	.toolbarbutton-icon,
+	.button-icon,
+	.icon,
+	.icon-css,
+	.cell-icon,
+	.tab-icon,
+	.icon-item-type,
+	.icon-attachment-type {
+		opacity: 0.74 !important;
+		color: var(--zk-ink-muted) !important;
+		fill: var(--zk-ink-muted) !important;
+		filter: grayscale(1) saturate(0) !important;
+	}
+
+	.icon-missing-file,
+	.retracted,
+	.zotero-tb-button[warning],
+	.zotero-tb-button[status="error"],
+	#zotero-tb-sync-error,
+	.zotero-message-error {
+		filter: none !important;
+		opacity: 1 !important;
+	}
+
+	#zotero-collections-search,
+	#zotero-lookup-textbox {
+		min-height: 24px !important;
+		max-height: 26px !important;
+		margin: 0 2px !important;
+		padding: 2px 7px !important;
+		border: 1px solid var(--zk-rule) !important;
+		border-radius: 2px !important;
+		background: var(--zk-surface) !important;
+		color: var(--zk-ink) !important;
+		box-shadow: none !important;
+		font-size: 11.5px !important;
+	}
+
+	#zotero-collections-search:focus,
+	#zotero-lookup-textbox:focus {
+		border-color: var(--zk-focus) !important;
+		box-shadow: 0 0 0 1px rgba(77, 78, 74, 0.18) !important;
+		outline: none !important;
+	}
+
+	/* Library and item tables */
+	.virtualized-table {
+		background: var(--zk-paper) !important;
+		color: var(--zk-ink) !important;
+		font-size: 12px !important;
+		line-height: 1.25 !important;
+	}
+
+	#zotero-collections-tree.virtualized-table {
+		background: var(--zk-sidepane) !important;
+	}
+
+	.virtualized-table-header {
+		min-height: 24px !important;
+		height: 24px !important;
+		background: var(--zk-toolbar) !important;
+		border-bottom: 1px solid var(--zk-rule-soft) !important;
+		color: var(--zk-ink-soft) !important;
+		font-size: 10px !important;
+		font-weight: 600 !important;
+		text-transform: none !important;
+	}
+
+	.virtualized-table-header .cell {
+		padding-inline: 6px !important;
+		border: 0 !important;
+		color: var(--zk-ink-soft) !important;
+	}
+
+	.virtualized-table-header .label {
+		font-size: 10px !important;
+		font-weight: 600 !important;
+		color: var(--zk-ink-soft) !important;
+	}
+
+	.virtualized-table .row {
+		border: 0 !important;
+		border-radius: 0 !important;
+		background: transparent !important;
+		color: var(--zk-ink) !important;
+	}
+
+	#zotero-items-tree .row.even {
+		background: var(--zk-surface) !important;
+	}
+
+	#zotero-items-tree .row.odd {
+		background: #f8f8f6 !important;
+	}
+
+	.virtualized-table .row:hover:not(.selected):not([aria-selected="true"]) {
+		background: var(--zk-selection-softer) !important;
+	}
+
+	.virtualized-table .row.context-row {
+		color: var(--zk-ink-soft) !important;
+	}
+
+	.virtualized-table .row.highlighted:not(.selected) {
+		background: #f2eee2 !important;
+	}
+
+	.virtualized-table .row.selected,
+	.virtualized-table .row[aria-selected="true"] {
+		background: var(--zk-selection-soft) !important;
+		color: var(--zk-ink) !important;
+		box-shadow:
+			inset 3px 0 0 var(--zk-selection),
+			inset 0 0 0 1px rgba(77, 78, 74, 0.22) !important;
+	}
+
+	#zotero-items-tree .row.selected,
+	#zotero-items-tree .row[aria-selected="true"],
+	#zotero-collections-tree .row.selected,
+	#zotero-collections-tree .row[aria-selected="true"] {
+		background: var(--zk-selection-soft) !important;
+		color: var(--zk-ink) !important;
+	}
+
+	.focus-states-target:focus-within .row.selected,
+	.focus-states-target:focus-within .row[aria-selected="true"] {
+		background: var(--zk-selection-soft) !important;
+		color: var(--zk-ink) !important;
+	}
+
+	#zotero-items-tree.focus-states-target:focus-within .row.selected,
+	#zotero-items-tree.focus-states-target:focus-within .row[aria-selected="true"],
+	#zotero-collections-tree.focus-states-target:focus-within .row.selected,
+	#zotero-collections-tree.focus-states-target:focus-within .row[aria-selected="true"] {
+		background: var(--zk-selection-soft) !important;
+		color: var(--zk-ink) !important;
+	}
+
+	.virtualized-table .row.focused {
+		outline: 1px solid var(--zk-selection-border) !important;
+		outline-offset: -1px !important;
+	}
+
+	.virtualized-table .cell {
+		padding-inline: 6px !important;
+		color: inherit !important;
+	}
+
+	.virtualized-table .cell.primary,
+	.virtualized-table .cell-text {
+		font-size: 12px !important;
+		font-weight: 450 !important;
+	}
+
+	#zotero-items-tree .title .cell-text,
+	#zotero-items-tree .cell.title .cell-text {
+		font-weight: 500 !important;
+	}
+
+	#zotero-items-tree .creator .cell-text,
+	#zotero-items-tree .date .cell-text,
+	#zotero-items-tree .year .cell-text {
+		color: var(--zk-ink-muted) !important;
+		font-weight: 400 !important;
+	}
+
+	#zotero-items-tree .row.selected .cell,
+	#zotero-items-tree .row.selected .cell-text,
+	#zotero-items-tree .row[aria-selected="true"] .cell,
+	#zotero-items-tree .row[aria-selected="true"] .cell-text,
+	#zotero-items-tree.focus-states-target:focus-within .row.selected .cell,
+	#zotero-items-tree.focus-states-target:focus-within .row.selected .cell-text,
+	#zotero-items-tree.focus-states-target:focus-within .row[aria-selected="true"] .cell,
+	#zotero-items-tree.focus-states-target:focus-within .row[aria-selected="true"] .cell-text {
+		color: var(--zk-ink) !important;
+		opacity: 1 !important;
+		text-shadow: none !important;
+	}
+
+	#zotero-collections-tree .row {
+		margin: 0 !important;
+	}
+
+	#zotero-collections-tree .row .cell {
+		padding-inline: 5px 6px !important;
+	}
+
+	#zotero-collections-tree .row .cell-text {
+		font-size: 11.5px !important;
+		font-weight: 450 !important;
+	}
+
+	#zotero-collections-tree .row[aria-level="1"] .cell-text,
+	#zotero-collections-tree .row:not([aria-level]) .cell-text {
+		font-size: 11px !important;
+		font-weight: 650 !important;
+		color: var(--zk-ink-muted) !important;
+	}
+
+	#zotero-collections-tree .row.selected .cell-text,
+	#zotero-collections-tree .row[aria-selected="true"] .cell-text,
+	.focus-states-target:focus-within #zotero-collections-tree .row.selected .cell-text,
+	.focus-states-target:focus-within #zotero-collections-tree .row[aria-selected="true"] .cell-text {
+		color: var(--zk-ink) !important;
+		opacity: 1 !important;
+	}
+
+	.twisty,
+	.spacer-twisty,
+	.spacer-header {
+		opacity: 0.55 !important;
+	}
+
+	/* Item pane */
+	#zotero-item-pane {
+		border-inline-start: 1px solid var(--zk-rule) !important;
+		background: var(--zk-paper) !important;
+	}
+
+	#zotero-context-pane,
+	#zotero-context-pane-inner,
+	#zotero-context-pane-sidenav,
+	item-pane-sidenav,
+	.zotero-view-item-sidenav {
+		background: var(--zk-paper) !important;
+		border-inline-start: 1px solid var(--zk-rule-soft) !important;
+		color: var(--zk-ink-muted) !important;
+	}
+
+	item-pane-sidenav {
+		width: 35px !important;
+		padding: 5px 3px 0 !important;
+		gap: 4px !important;
+	}
+
+	item-pane-sidenav .highlight {
+		background: var(--zk-selection-softer) !important;
+		border-radius: 3px !important;
+	}
+
+	item-pane-sidenav .btn,
+	.zotero-view-item-sidenav toolbarbutton,
+	#zotero-context-pane-sidenav toolbarbutton {
+		opacity: 0.54 !important;
+		fill: var(--zk-ink-soft) !important;
+		stroke: var(--zk-ink-soft) !important;
+		color: var(--zk-ink-soft) !important;
+		filter: grayscale(1) saturate(0) !important;
+		border-radius: 3px !important;
+	}
+
+	item-pane-sidenav .btn:hover,
+	.zotero-view-item-sidenav toolbarbutton:hover,
+	#zotero-context-pane-sidenav toolbarbutton:hover {
+		opacity: 0.9 !important;
+		background: var(--zk-selection-softer) !important;
+	}
+
+	item-pane-sidenav .btn[aria-selected="true"],
+	item-pane-sidenav .highlight .btn {
+		opacity: 0.95 !important;
+		fill: var(--zk-ink) !important;
+		stroke: var(--zk-ink) !important;
+		color: var(--zk-ink) !important;
+	}
+
+	.zotero-item-pane-content,
+	#zotero-item-pane-content,
+	item-details,
+	item-pane,
+	collapsible-section {
+		background: var(--zk-paper) !important;
+		color: var(--zk-ink) !important;
+	}
+
+	#zotero-item-pane-content {
+		background: #f7f7f5 !important;
+	}
+
+	item-pane-header {
+		min-height: 32px !important;
+		max-height: none !important;
+		padding: 6px 8px !important;
+		background: #f7f7f5 !important;
+		border-bottom: 1px solid var(--zk-rule-soft) !important;
+	}
+
+	item-pane-header .head-container {
+		align-items: stretch !important;
+		gap: 2px !important;
+	}
+
+	item-pane-header .head-container .title-head .title {
+		margin: 0 !important;
+		font-size: 12px !important;
+		font-weight: 650 !important;
+		line-height: 1.28 !important;
+		color: var(--zk-ink) !important;
+	}
+
+	item-pane-header .creator-year,
+	item-pane-header .bib-entry {
+		font-size: 10.5px !important;
+		color: var(--zk-ink-muted) !important;
+		padding-inline: 2px !important;
+	}
+
+	#zotero-item-pane label,
+	#zotero-item-pane .label,
+	#zotero-item-pane .meta-label {
+		color: var(--zk-ink-muted) !important;
+		font-size: 10.5px !important;
+		font-weight: 500 !important;
+	}
+
+	info-box #info-table,
+	attachment-box .metadata-table,
+	note-box .metadata-table {
+		grid-template-columns: minmax(72px, 28%) minmax(0, 1fr) !important;
+		column-gap: 8px !important;
+		row-gap: 2px !important;
+		padding-inline: 8px !important;
+	}
+
+	info-box #info-table .meta-row,
+	attachment-box .metadata-table .meta-row,
+	note-box .metadata-table .meta-row {
+		min-height: 20px !important;
+		align-items: start !important;
+	}
+
+	info-box #info-table .meta-row .meta-label,
+	attachment-box .metadata-table .meta-row .meta-label,
+	note-box .metadata-table .meta-row .meta-label {
+		justify-content: end !important;
+		padding-top: 2px !important;
+		color: var(--zk-ink-muted) !important;
+	}
+
+	info-box #info-table .meta-row .meta-label > label,
+	attachment-box .metadata-table .meta-row .meta-label > label,
+	note-box .metadata-table .meta-row .meta-label > label {
+		margin: 0 !important;
+		line-height: 1.25 !important;
+	}
+
+	#zotero-item-pane editable-text {
+		--editable-text-padding-inline: 3px;
+		--editable-text-padding-block: 1px;
+		--editable-text-tight-padding-inline: 3px;
+		--editable-text-tight-padding-block: 1px;
+		font-size: 11.5px !important;
+		line-height: 1.25 !important;
+	}
+
+	#zotero-item-pane editable-text .input {
+		min-height: 18px !important;
+		margin: 0 !important;
+		padding: 1px 3px !important;
+		border: 1px solid transparent !important;
+		border-radius: 2px !important;
+		background: transparent !important;
+		box-shadow: none !important;
+		font: inherit !important;
+		line-height: inherit !important;
+		color: var(--zk-ink) !important;
+	}
+
+	#zotero-item-pane editable-text .input:hover:not(:read-only, :focus) {
+		background: var(--zk-selection-softer) !important;
+		box-shadow: none !important;
+		border-color: var(--zk-rule-soft) !important;
+	}
+
+	#zotero-item-pane editable-text .input:focus:not(:read-only) {
+		background: var(--zk-surface) !important;
+		border-color: var(--zk-focus) !important;
+		box-shadow: 0 0 0 1px rgba(77, 78, 74, 0.12) !important;
+		outline: none !important;
+	}
+
+	item-pane-header editable-text {
+		--max-visible-lines: 2;
+		font-size: 12px !important;
+	}
+
+	item-pane-header editable-text .input {
+		padding-inline: 2px !important;
+	}
+
+	info-box .creator-name-box {
+		gap: 4px !important;
+		min-width: 0 !important;
+	}
+
+	info-box .creator-name-box editable-text {
+		min-width: 0 !important;
+	}
+
+	info-box .creator-name-box editable-text[fieldMode="0"]:first-child {
+		flex: 2 1 0 !important;
+		margin-inline-end: 0 !important;
+	}
+
+	info-box .creator-name-box editable-text[fieldMode="0"]:last-child {
+		flex: 1.15 1 0 !important;
+	}
+
+	info-box .creator-type-label,
+	info-box #more-creators-label {
+		color: var(--zk-ink-muted) !important;
+		font-size: 10.5px !important;
+		font-weight: 500 !important;
+	}
+
+	info-box #zotero-date-field-status {
+		color: var(--zk-ink-soft) !important;
+		font-size: 10px !important;
+	}
+
+	collapsible-section {
+		gap: 1px !important;
+		padding-block: 2px !important;
+		border-bottom: 1px solid var(--zk-rule-soft) !important;
+	}
+
+	collapsible-section > header,
+	collapsible-section .head,
+	collapsible-section .section-header {
+		min-height: 24px !important;
+		background: transparent !important;
+		color: var(--zk-ink) !important;
+		font-size: 11px !important;
+		font-weight: 600 !important;
+	}
+
+	collapsible-section > .head .title-box .title {
+		color: var(--zk-ink-muted) !important;
+		font-size: 11px !important;
+		font-weight: 650 !important;
+	}
+
+	collapsible-section > .head .title::before {
+		fill: var(--zk-ink-soft) !important;
+		stroke: var(--zk-ink-soft) !important;
+		filter: grayscale(1) saturate(0) !important;
+		opacity: 0.72 !important;
+	}
+
+	/* Tags */
+	#zotero-tag-selector-container {
+		border-top: 1px solid var(--zk-rule) !important;
+	}
+
+	#zotero-tag-selector,
+	.tag-selector-list-container,
+	.tag-selector-list {
+		background: var(--zk-sidepane) !important;
+		color: var(--zk-ink) !important;
+	}
+
+	.tag-selector-item {
+		min-height: 18px !important;
+		padding: 1px 6px !important;
+		border: 1px solid var(--zk-rule-soft) !important;
+		border-radius: 3px !important;
+		background: rgba(255, 255, 255, 0.52) !important;
+		color: var(--zk-ink-muted) !important;
+		font-size: 11px !important;
+		font-weight: 500 !important;
+	}
+
+	.tag-selector-item:hover {
+		background: var(--zk-selection-softer) !important;
+		color: var(--zk-ink) !important;
+	}
+
+	.tag-selector-item.selected {
+		background: var(--zk-selection-soft) !important;
+		border-color: var(--zk-selection-border) !important;
+		color: var(--zk-ink) !important;
+	}
+
+	.tag-selector-message {
+		color: var(--zk-ink-soft) !important;
+		font-size: 11.5px !important;
+	}
+
+	/* Banners, menus, and popups */
+	.banner {
+		background: #f7f4e9 !important;
+		border: 1px solid #ded7c2 !important;
+		color: var(--zk-warning) !important;
+		box-shadow: none !important;
+	}
+
+	panel,
+	menupopup,
+	menu,
+	menuitem {
+		font-size: 12px !important;
+	}
+
+	menupopup {
+		border: 1px solid var(--zk-rule) !important;
+		background: var(--zk-surface) !important;
+		color: var(--zk-ink) !important;
+	}
+
+	menuitem[_moz-menuactive="true"],
+	menu[_moz-menuactive="true"] {
+		background: var(--zk-selection-soft) !important;
+		color: var(--zk-ink) !important;
+	}
+
+	/* Reader chrome */
+	.reader,
+	.reader-ui,
+	#reader-ui,
+	#reader-toolbar,
+	.reader-toolbar {
+		background: var(--zk-toolbar) !important;
+		color: var(--zk-ink) !important;
+	}
+
+	#reader-toolbar,
+	.reader-toolbar {
+		border-bottom: 1px solid var(--zk-rule-soft) !important;
+		box-shadow: none !important;
+	}
+
+	.pdfViewer,
+	#viewerContainer {
+		background: #e9e9e6 !important;
+	}
+
+	/* Reader focus mode: hide Zotero chrome at userChrome priority */
+	:root.zspr-focus-mode #titlebar {
+		min-height: 31px !important;
+		height: 31px !important;
+		max-height: 31px !important;
+		padding: 0 !important;
+		margin: 0 !important;
+		overflow: visible !important;
+		background: var(--zk-toolbar) !important;
+		border-bottom: 1px solid var(--zk-rule-soft) !important;
+	}
+
+	:root.zspr-focus-mode #zotero-collections-tree-container {
+		box-sizing: border-box !important;
+		padding-top: 2px !important;
+	}
+
+	:root.zspr-focus-mode #toolbar-menubar,
+	:root.zspr-focus-mode #tab-bar-container,
+	:root.zspr-focus-mode .tab-bar-inner-container,
+	:root.zspr-focus-mode .tabs-wrapper,
+	:root.zspr-focus-mode .tabs,
+	:root.zspr-focus-mode #zotero-tabs-toolbar,
+	:root.zspr-focus-mode .zotero-toolbar,
+	:root.zspr-focus-mode toolbar.toolbar-primary,
+	:root.zspr-focus-mode #zotero-toolbar,
+	:root.zspr-focus-mode #zotero-collections-toolbar,
+	:root.zspr-focus-mode #zotero-items-toolbar,
+	:root.zspr-focus-mode #zotero-toolbar-collection-tree,
+	:root.zspr-focus-mode #zotero-toolbar-item-tree {
+		display: none !important;
+		min-height: 0 !important;
+		height: 0 !important;
+		max-height: 0 !important;
+		padding: 0 !important;
+		margin: 0 !important;
+		border: 0 !important;
+		overflow: hidden !important;
+	}
+}
