@@ -1,6 +1,6 @@
 # Quiet Theme for Zotero
 
-Quiet Theme gives Zotero a compact interface with muted colors and restrained selection states. Its menu combines Zotero's native appearance setting with an optional interface overlay.
+Quiet Theme changes Zotero’s colors, typography, and interface spacing. Its menu combines Zotero's native appearance setting with an optional interface overlay.
 
 ## Install
 
@@ -14,7 +14,7 @@ After this version is installed, Zotero can check this repository's `updates.jso
 
 ## Use
 
-Open **View → Quiet Theme**. Choose **Automatic**, **Light**, or **Dark** for Zotero's native appearance. **Quiet Overlay** controls the compact interface stylesheet independently.
+Open **View → Quiet Theme**. Choose **Automatic**, **Light**, or **Dark** for Zotero's native appearance. **Quiet Overlay** controls the theme stylesheet independently.
 
 The overlay is copied into the Zotero profile as managed `userChrome.css`. Restart Zotero after enabling or disabling it to reload the interface reliably. Turning it off removes the managed overlay; unrelated profile customizations are preserved where the source's safety checks can identify them.
 
@@ -31,7 +31,7 @@ See the [Zotero Tools main page](https://kvarnelis.github.io/zotero-tools/) for 
 - [Praetor for Zotero](https://github.com/kvarnelis/zotero-praetor) — Chat with Codex or Claude Code about Zotero items, search indexed text, and review proposed library changes.
 - [NotebookLM Pane for Zotero](https://github.com/kvarnelis/zotero-notebooklm-pane) — Keep Google NotebookLM in the item pane and prepare local PDFs for its upload dialog.
 - [Page View for Zotero](https://github.com/kvarnelis/zotero-page-view) — Add single-page reading, two-page spreads, page fitting, and focus controls to the PDF reader.
-- [Compact Pane for Zotero](https://github.com/kvarnelis/zotero-compact-pane) — Show compact metadata fields and copy attachment paths from the item menu.
+- [Compact Pane for Zotero](https://github.com/kvarnelis/zotero-compact-pane) — Show selected metadata fields for each item type, expand the full list when needed, and copy attachment paths.
 - [Book Helper](https://github.com/kvarnelis/book-helper) — Identify and rename PDF and DRM-free EPUB books in a native Mac app, with optional Zotero import.
 
 ## Build and check
